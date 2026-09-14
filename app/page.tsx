@@ -24,17 +24,17 @@ const pillars = [
 ]
 
 const images = {
-  network: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2200&q=90',
-  office: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=85',
-  technology: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1500&q=90',
-  space: 'https://images.unsplash.com/photo-1517976547714-720226b864c1?auto=format&fit=crop&w=1500&q=90',
-  satellite: 'https://images.unsplash.com/photo-1516849677043-ef67c9557e16?auto=format&fit=crop&w=1500&q=90',
-  datacenter: 'https://images.unsplash.com/photo-1591405351990-4726e331f141?auto=format&fit=crop&w=1500&q=90',
-  cybersecurity: 'https://images.unsplash.com/photo-1563770660941-10a8c3d1c8a6?auto=format&fit=crop&w=1200&q=90',
-  engineering: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=90',
-  data: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1500&q=80',
-  security: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=85',
-  future: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=2200&q=90'
+  network: '/images/network.jpg',
+  office: '/images/office.jpg',
+  technology: '/images/technology.jpg',
+  space: '/images/space.jpg',
+  satellite: '/images/satellite.jpg',
+  datacenter: '/images/datacenter.jpg',
+  cybersecurity: '/images/cybersecurity.jpg',
+  engineering: '/images/engineering.jpg',
+  data: '/images/data.jpg',
+  security: '/images/security.jpg',
+  future: '/images/future.jpg'
 }
 
 export default function Page() {
