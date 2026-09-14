@@ -1,12 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 150" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 170" role="img" aria-labelledby="title desc">
   <title id="title">PAJIC Holding Ltd</title>
-  <desc id="desc">PAJIC Holding monogram and wordmark in black and gold</desc>
-  <rect width="560" height="150" fill="#080808"/>
-  <rect x="18" y="11" width="92" height="128" rx="46" fill="#E7CA83"/>
-  <g fill="#080808" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" font-weight="700">
-    <text x="64" y="79" font-size="59">P</text>
-    <text x="64" y="116" font-size="52">H</text>
+  <desc id="desc">PAJIC Holding monogram and wordmark</desc>
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F0CC78"/>
+      <stop offset="0.48" stop-color="#D8A95A"/>
+      <stop offset="1" stop-color="#E7BE6B"/>
+    </linearGradient>
+  </defs>
+  <rect width="620" height="170" fill="#050505"/>
+  <rect x="18" y="9" width="82" height="152" rx="41" fill="url(#gold)"/>
+  <g fill="#050505" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle">
+    <text x="59" y="78" font-size="58" font-weight="400">P</text>
+    <text x="59" y="119" font-size="55" font-weight="400">H</text>
+    <text x="65" y="151" font-size="50" font-weight="400">L</text>
   </g>
-  <text x="136" y="73" fill="#E7CA83" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="500" letter-spacing="8.2">PAJIC HOLDING</text>
-  <text x="326" y="113" fill="#E7CA83" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" letter-spacing="7">LTD</text>
+  <text x="126" y="72" fill="url(#gold)" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400" letter-spacing="8.2">PAJIC HOLDING</text>
+  <text x="279" y="112" fill="url(#gold)" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="500" letter-spacing="7">LTD</text>
 </svg>
