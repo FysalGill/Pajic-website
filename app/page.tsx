@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { ArrowUpRight, Menu, X, Plus } from 'lucide-react'
+import { ArrowUpRight, Menu, X, Plus, Cpu, Satellite, Server, Shield, ChartNoAxesCombined, Globe2 } from 'lucide-react'
 
 const thesis = [
   ['01','AI','Artificial Intelligence','AI platforms, agents, applied intelligence and intelligent software.'],
@@ -20,21 +20,18 @@ const map = [
 ]
 
 const pillars = [
-  ['AI & DATA','01'],['SPACE & CONNECTIVITY','02'],['DIGITAL INFRASTRUCTURE','03'],['CYBERSECURITY','04'],['VENTURE BUILDING','05'],['EMERGING MARKETS','06']
+  ['AI & DATA', Cpu],
+  ['SPACE & CONNECTIVITY', Satellite],
+  ['DIGITAL INFRASTRUCTURE', Server],
+  ['CYBERSECURITY', Shield],
+  ['VENTURE BUILDING', ChartNoAxesCombined],
+  ['EMERGING MARKETS', Globe2]
 ]
 
 const images = {
-  network: '/images/network.jpg',
-  office: '/images/office.jpg',
-  technology: '/images/technology.jpg',
-  space: '/images/space.jpg',
-  satellite: '/images/satellite.jpg',
-  datacenter: '/images/datacenter.jpg',
-  cybersecurity: '/images/cybersecurity.jpg',
-  engineering: '/images/engineering.jpg',
-  data: '/images/data.jpg',
-  security: '/images/security.jpg',
-  future: '/images/future.jpg'
+  network: '/images/network.jpg', office: '/images/office.jpg', technology: '/images/technology.jpg', space: '/images/space.jpg',
+  satellite: '/images/satellite.jpg', datacenter: '/images/datacenter.jpg', cybersecurity: '/images/cybersecurity.jpg',
+  engineering: '/images/engineering.jpg', data: '/images/data.jpg', security: '/images/security.jpg', future: '/images/future.jpg'
 }
 
 export default function Page() {
@@ -48,10 +45,7 @@ export default function Page() {
     const links = ['about','thesis','lab','portfolio','intelligence','press','contact']
     const onScroll = () => {
       let current = ''
-      for (const id of links) {
-        const el = document.getElementById(id)
-        if (el && scrollY >= el.offsetTop - 180) current = id
-      }
+      for (const id of links) { const el = document.getElementById(id); if (el && scrollY >= el.offsetTop - 180) current = id }
       setActive(current)
     }
     addEventListener('scroll', onScroll)
@@ -59,13 +53,13 @@ export default function Page() {
     return () => { observer.disconnect(); removeEventListener('scroll', onScroll) }
   }, [])
 
-  const nav = (id: string) => <a className={active === id ? 'active' : ''} href={'#' + id} onClick={() => setOpen(false)}>{id === 'thesis' ? 'Investment' : id[0].toUpperCase() + id.slice(1)}</a>
+  const nav = (id: string) => <a className={active === id ? 'active' : ''} href={'#' + id} onClick={() => setOpen(false)}>{id === 'thesis' ? 'Investment' : id === 'lab' ? 'AI Lab' : id[0].toUpperCase() + id.slice(1)}</a>
 
   return <>
     <header><div className="nav">
       <a className="brandLogo" href="#top"><img src="/pajic-logo.svg" alt="PAJIC Holding Ltd"/></a>
       <nav className={open ? 'open' : ''}>{['about','thesis','lab','portfolio','intelligence','press','contact'].map(id => nav(id))}</nav>
-      <a className="navcta" href="#contact">CONTACT US <ArrowUpRight size={14}/></a>
+      <a className="navcta" href="#contact">CONTACT US <ArrowUpRight size={16}/></a>
       <button className="menub" aria-label="Open menu" onClick={() => setOpen(!open)}>{open ? <X/> : <Menu/>}</button>
     </div></header>
 
@@ -79,14 +73,11 @@ export default function Page() {
           <div className="actions"><a className="gold" href="#thesis">OUR INVESTMENT THESIS <ArrowUpRight/></a><a className="ghost" href="#contact">WORK WITH PAJIC</a></div>
         </div>
         <div className="heroMeta">01 — 07 <span>TECHNOLOGY · CAPITAL · EXECUTION</span></div>
-        <div className="pillarStrip">{pillars.map(([name,n]) => <a key={n} href={n === '01' ? '#thesis' : n === '02' ? '#thesis' : n === '03' ? '#thesis' : n === '04' ? '#thesis' : n === '05' ? '#lab' : '#about'}><span className="pillarIcon">{n}</span><strong>{name}</strong></a>)}</div>
         <a className="scrollCue" href="#about"><span>SCROLL</span><i>↓</i></a>
+        <div className="pillarStrip">{pillars.map(([name, Icon]) => <a key={name} href="#thesis"><Icon className="pillarIcon"/><strong>{name}</strong></a>)}</div>
       </section>
 
-      <section id="about" className="wrap section reveal">
-        <div className="split"><div><div className="eyebrow">01 / ABOUT PAJIC</div><h2>Technology is changing the map.</h2></div><p>We back technologies with the potential to reshape industries, create new markets and build durable advantage. Our perspective combines deep technology understanding with an emerging-market lens.</p></div>
-        <div className="imageStrip"><div><img className="wide" src={images.office} alt="Technology and capital"/><div className="imageCaption">Technology & Capital</div></div><div><img src={images.technology} alt="Technology"/><div className="imageCaption">Technology</div></div><div><img src={images.space} alt="Space technology"/><div className="imageCaption">Space & Connectivity</div></div></div>
-      </section>
+      <section id="about" className="wrap section reveal"><div className="split"><div><div className="eyebrow">01 / ABOUT PAJIC</div><h2>Technology is changing the map.</h2></div><p>We back technologies with the potential to reshape industries, create new markets and build durable advantage. Our perspective combines deep technology understanding with an emerging-market lens.</p></div><div className="imageStrip"><div><img className="wide" src={images.office} alt="Technology and capital"/><div className="imageCaption">Technology & Capital</div></div><div><img src={images.technology} alt="Technology"/><div className="imageCaption">Technology</div></div><div><img src={images.space} alt="Space technology"/><div className="imageCaption">Space & Connectivity</div></div></div></section>
 
       <section id="thesis" className="dark section"><div className="wrap reveal"><div className="split"><div><div className="eyebrow">02 / INVESTMENT THESIS</div><h2>Structural advantage.</h2></div><p>Our focus spans the technology stack — from intelligent software and data to the infrastructure that powers the digital economy.</p></div><div className="cards">{thesis.map(([n,k,t,d]) => <article key={n} className="card"><span>{n} / {k}</span><h3>{t}</h3><p>{d}</p><Plus className="plus" size={18}/></article>)}</div></div></section>
 
