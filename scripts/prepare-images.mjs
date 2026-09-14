@@ -16,20 +16,32 @@ const images = {
   future: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=2200&q=90'
 }
 
+const fallback = images.security
 const out = path.join(process.cwd(), 'public', 'images')
 await fs.mkdir(out, { recursive: true })
 
-for (const [name, url] of Object.entries(images)) {
+async function download(url) {
   const res = await fetch(url)
-  if (!res.ok) throw new Error(`Failed to download ${name}: ${res.status}`)
-  const input = Buffer.from(await res.arrayBuffer())
+  if (!res.ok) throw new Error(String(res.status))
+  return Buffer.from(await res.arrayBuffer())
+}
+
+for (const [name, url] of Object.entries(images)) {
+  let input
+  try {
+    input = await download(url)
+  } catch (error) {
+    if (name !== 'cybersecurity') throw new Error(`Failed to download ${name}: ${error.message}`)
+    console.warn(`Cybersecurity source returned ${error.message}; using the verified security source as fallback.`)
+    input = await download(fallback)
+  }
+
   await sharp(input)
     .resize(1600, 900, { fit: 'cover', position: 'centre' })
-    .grayscale()
-    .tint('#d8be79')
-    .modulate({ brightness: 0.78, saturation: 0.65 })
-    .jpeg({ quality: 88, progressive: true })
+    .modulate({ brightness: 0.82, saturation: 0.42 })
+    .linear(1.04, -5)
+    .jpeg({ quality: 90, progressive: true })
     .toFile(path.join(out, `${name}.jpg`))
 }
 
-console.log(`Prepared ${Object.keys(images).length} PAJIC black/gold images at 1600x900.`)
+console.log(`Prepared ${Object.keys(images).length} PAJIC self-hosted editorial images at 1600x900.`)
