@@ -1,33 +1,60 @@
-/* PAJIC visual refinement: symmetrical image system + black/gold treatment */
-.nav{height:94px;width:min(1380px,94vw);gap:30px}
-nav{gap:30px}
-nav a{font-size:14px;font-weight:700;letter-spacing:.65px;color:#d2cec4}
-nav a:hover,nav a.active{color:#e6c978}
-.navcta{font-size:12px;font-weight:800;padding:14px 20px;letter-spacing:1.2px}
-.menub{width:64px;height:64px;flex-basis:64px}
-.menub svg{width:40px;height:40px;stroke-width:1.5}
+/* PAJIC final visual pass — match approved black/gold homepage */
+html{scroll-padding-top:128px}
+header{height:128px}
+.nav{height:128px;width:min(1960px,96vw);gap:34px}
+.brandLogo img{width:370px;height:108px;object-fit:contain;display:block}
+nav{gap:36px}
+nav a{font-size:16px;font-weight:700;letter-spacing:.35px;color:#d8d5ce;text-shadow:0 0 14px rgba(226,199,121,.06)}
+nav a:hover,nav a.active{color:#ead9ac;text-shadow:0 0 18px rgba(226,199,121,.22)}
+.navcta{font-size:14px;font-weight:800;padding:17px 27px;letter-spacing:1.45px;border-color:#e2c779;color:#ead9ac;box-shadow:0 0 22px rgba(226,199,121,.06)}
+.menub{width:66px;height:66px;flex-basis:66px}
+.menub svg{width:43px;height:43px;stroke-width:1.5}
 
-/* Every editorial image uses the same 16:9 visual frame. */
-.imageStrip{grid-template-columns:repeat(3,1fr);gap:14px}
+/* The hero must use the self-hosted V4.1 network photograph, not the old remote background. */
+.hero{padding-top:128px;background:radial-gradient(circle at 76% 48%,rgba(226,199,121,.10),transparent 27%),linear-gradient(90deg,rgba(5,5,5,.97) 0%,rgba(5,5,5,.82) 39%,rgba(5,5,5,.27) 72%,rgba(5,5,5,.14) 100%),url('/images/network.jpg') center/cover}
+.heroIn{padding-top:25px}
+.hero .eyebrow{font-size:12px;letter-spacing:3.2px;text-shadow:0 0 18px rgba(226,199,121,.22)}
+.hero h1{font-size:clamp(64px,7.0vw,112px);line-height:.9;letter-spacing:-5.5px;margin:24px 0 29px;max-width:980px}
+.hero h1 em{color:#ead9ac;text-shadow:0 0 24px rgba(226,199,121,.12)}
+.hero p{max-width:760px;font-size:20px;line-height:1.55;color:#f3f0ea}
+.gold,.ghost{font-size:12px;letter-spacing:1.25px}
+.gold{box-shadow:0 0 28px rgba(226,199,121,.10)}
+.ghost{box-shadow:0 0 20px rgba(226,199,121,.05)}
+.heroMeta{font-size:11px;letter-spacing:2.5px}
+.heroMeta span{color:#8d8a83}
+.scrollCue{font-size:11px;text-shadow:0 0 16px rgba(255,255,255,.18)}
+.scrollCue i{color:#ead9ac;text-shadow:0 0 18px rgba(226,199,121,.30)}
+
+/* Keep every image panel on a disciplined, matching 16:9 grid. */
+.imageStrip{grid-template-columns:repeat(3,1fr);gap:16px}
 .imageStrip>div{display:flex;flex-direction:column;min-width:0}
 .imageStrip img,.imageStrip .wide{width:100%;height:auto!important;aspect-ratio:16/9;object-fit:cover;display:block}
 .featureImg{aspect-ratio:16/9;overflow:hidden}
-.featureImg img{width:100%;height:100%!important;object-fit:cover;filter:grayscale(1) sepia(.34) saturate(.78) contrast(1.08) brightness(.72)}
-.labPhoto{aspect-ratio:16/9;overflow:hidden}
-.labPhoto img{width:100%;height:100%!important;object-fit:cover;filter:grayscale(1) sepia(.34) saturate(.78) contrast(1.08) brightness(.72)}
-.mosaic{grid-template-columns:repeat(2,1fr);gap:14px}
-.mosaic img,.mosaicSide img{width:100%;height:auto!important;aspect-ratio:16/9;object-fit:cover;display:block;filter:grayscale(1) sepia(.34) saturate(.78) contrast(1.08) brightness(.72)}
-.mosaicSide{grid-template-rows:repeat(2,1fr);gap:14px}
-.article img{width:100%;height:auto!important;aspect-ratio:16/9;object-fit:cover;filter:grayscale(1) sepia(.34) saturate(.78) contrast(1.08) brightness(.70)}
-.contactVisual img{filter:grayscale(1) sepia(.38) saturate(.82) contrast(1.08) brightness(.62)}
-.portfolioImage img{filter:grayscale(1) sepia(.34) saturate(.78) contrast(1.08) brightness(.65)}
+.featureImg img,.labPhoto img,.mosaic img,.mosaicSide img,.article img,.contactVisual img,.portfolioImage img{object-fit:cover}
+.featureImg img,.labPhoto img,.mosaic img,.mosaicSide img,.article img,.contactVisual img,.portfolioImage img{filter:saturate(.78) contrast(1.08) brightness(.82)}
+.mosaic{grid-template-columns:repeat(2,1fr);gap:16px}
+.mosaic img,.mosaicSide img{width:100%;height:auto!important;aspect-ratio:16/9;display:block}
+.mosaicSide{grid-template-rows:repeat(2,1fr);gap:16px}
+.article img{width:100%;height:auto!important;aspect-ratio:16/9;display:block}
+.contactVisual img{width:100%;height:100%;display:block}
+.portfolioImage img{filter:saturate(.72) contrast(1.08) brightness(.70)}
+.imageStrip img,.featureImg img,.labPhoto img,.mosaic img,.article img{border:1px solid rgba(226,199,121,.30)}
 
-/* Fine gold keyline around all imagery keeps the page visually coherent. */
-.imageStrip img,.featureImg img,.labPhoto img,.mosaic img,.article img{border:1px solid rgba(216,190,121,.28)}
+/* Gold editorial labels and links get a restrained premium glow. */
+.eyebrow,.imageCaption,.article small,.tags span,.portfolio article>span,.pressCard span{ text-shadow:0 0 14px rgba(226,199,121,.13) }
 
-/* Keep major headings to a disciplined two-line rhythm where possible. */
+/* Major headings stay within a two-line editorial rhythm. */
 .split h2,.lab h2,.press h2,.contact h2,.featureCopy h2{max-width:680px}
 
-@media(max-width:1100px){nav{gap:18px}nav a{font-size:13px}.nav{gap:18px}}
-@media(max-width:900px){.nav{height:82px}.menub{width:58px;height:58px;flex-basis:58px}.menub svg{width:36px;height:36px}.imageStrip{grid-template-columns:repeat(2,1fr)}.imageStrip>div:first-child{grid-column:1/-1}.mosaic{grid-template-columns:1fr}.mosaicSide{grid-template-columns:repeat(2,1fr);grid-template-rows:1fr}.mosaicSide img{height:auto!important}}
-@media(max-width:560px){.nav{height:78px}.imageStrip,.mosaicSide{grid-template-columns:1fr}.imageStrip>div:first-child{grid-column:auto}.mosaicSide{grid-template-rows:auto}.mosaicSide img{height:auto!important}.featureImg{aspect-ratio:16/9}}
+@media(max-width:1500px){
+  .nav{gap:24px}.brandLogo img{width:330px}.navcta{padding:16px 22px}nav{gap:28px}nav a{font-size:15px}
+}
+@media(max-width:1100px){
+  .nav{height:96px;width:min(94vw,1380px);gap:18px}.brandLogo img{width:270px;height:82px}nav{gap:18px}nav a{font-size:13px}.navcta{padding:13px 16px;font-size:11px}.menub{width:60px;height:60px;flex-basis:60px}.menub svg{width:38px;height:38px}.hero{padding-top:96px}
+}
+@media(max-width:900px){
+  header{height:82px}.nav{height:82px}.brandLogo img{width:225px;height:68px}nav{gap:18px}.menub{width:58px;height:58px;flex-basis:58px}.menub svg{width:36px;height:36px}.imageStrip{grid-template-columns:repeat(2,1fr)}.imageStrip>div:first-child{grid-column:1/-1}.mosaic{grid-template-columns:1fr}.mosaicSide{grid-template-columns:repeat(2,1fr);grid-template-rows:1fr}.mosaicSide img{height:auto!important}.hero{padding-top:82px}
+}
+@media(max-width:560px){
+  .nav{height:78px}.brandLogo img{width:185px;height:62px}.imageStrip,.mosaicSide{grid-template-columns:1fr}.imageStrip>div:first-child{grid-column:auto}.mosaicSide{grid-template-rows:auto}.mosaicSide img{height:auto!important}.featureImg{aspect-ratio:16/9}.hero{padding-top:78px}.hero h1{font-size:52px;line-height:.91;letter-spacing:-2.5px}.hero p{font-size:16px}.hero .eyebrow{font-size:9px;letter-spacing:2.2px}
+}
