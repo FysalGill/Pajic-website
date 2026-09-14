@@ -1,0 +1,1 @@
+Vercel Next.js configuration updated. This file intentionally triggers a fresh production deployment after switching the project Framework Preset to Next.js.
