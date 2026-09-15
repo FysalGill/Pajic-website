@@ -12,6 +12,15 @@ const thesis = [
   ['06','DEEPTECH','DeepTech & Infrastructure','Compute, data centres, robotics, energy and advanced technology.']
 ]
 
+const thesisImages = [
+  '/images/technology.jpg',
+  '/images/software.jpg',
+  '/images/data.jpg',
+  '/images/cybersecurity.jpg',
+  '/images/satellite.jpg',
+  '/images/engineering.jpg'
+]
+
 const map = [
   ['01','INTELLIGENCE','AI · Agents · Data · Software'],
   ['02','INFRASTRUCTURE','Compute · Data Centres · Cybersecurity'],
@@ -44,7 +53,7 @@ export default function Page() {
     <main id="top">
       <section className="hero"><div className="heroGlow"/><div className="wrap heroIn reveal"><div className="eyebrow">TECHNOLOGY INVESTMENT · VENTURE BUILDING · EMERGING MARKETS</div><h1>We invest in<br/><em>what comes next.</em></h1><p>PAJIC is a technology investment and venture-building platform focused on AI, software, data, cybersecurity, space, connectivity and DeepTech.</p><div className="actions"><a className="gold" href="#thesis">OUR INVESTMENT THESIS <ArrowUpRight/></a><a className="ghost" href="#contact">WORK WITH PAJIC</a></div></div><a className="scrollCue" href="#about"><span>SCROLL</span><i>↓</i></a></section>
       <section id="about" className="wrap section reveal"><div className="split"><div><div className="eyebrow">01 / ABOUT PAJIC</div><h2>Technology is changing the map.</h2></div><p>We back technologies with the potential to reshape industries, create new markets and build durable advantage. Our perspective combines deep technology understanding with an emerging-market lens.</p></div><div className="imageStrip"><div><img className="wide" src={images.office} alt="Technology and capital"/><div className="imageCaption">Technology & Capital</div></div><div><img src={images.technology} alt="Technology"/><div className="imageCaption">Technology</div></div><div><img src={images.space} alt="Space technology"/><div className="imageCaption">Space & Connectivity</div></div></div></section>
-      <section id="thesis" className="dark section"><div className="wrap reveal"><div className="split"><div><div className="eyebrow">02 / INVESTMENT THESIS</div><h2>Structural advantage.</h2></div><p>Our focus spans the technology stack — from intelligent software and data to the infrastructure that powers the digital economy.</p></div><div className="cards">{thesis.map(([n,k,t,d])=><article key={n} className="card"><span>{n} / {k}</span><h3>{t}</h3><p>{d}</p><Plus className="plus" size={18}/></article>)}</div></div></section>
+      <section id="thesis" className="dark section"><div className="wrap reveal"><div className="split"><div><div className="eyebrow">02 / INVESTMENT THESIS</div><h2>Structural advantage.</h2></div><p>Our focus spans the technology stack — from intelligent software and data to the infrastructure that powers the digital economy.</p></div><div className="thesisGrid">{thesis.map(([n,k,t,d],i)=><article key={n} className="thesisTile"><img src={thesisImages[i]} alt={t}/><div className="thesisShade"/><div className="thesisContent"><span>{n} / {k}</span><h3>{t}</h3><p>{d}</p></div><Plus className="plus" size={18}/></article>)}</div></div></section>
       <section className="feature"><div className="featureImg"><img src={images.satellite} alt="Satellite and connectivity"/></div><div className="featureCopy reveal"><div className="eyebrow">03 / CONNECTIVITY</div><h2>From infrastructure beneath us to networks above us.</h2><p className="quote">The next technology cycle will be built across physical and digital infrastructure.</p><p>Satellite · Telecom · Infrastructure</p></div></section>
       <section id="lab" className="lab section"><div className="wrap reveal"><div className="labGrid"><div className="labPhoto"><img src={images.technology} alt="AI Lab technology"/><div className="labBadge">PAJIC AI LAB</div></div><div><div className="eyebrow">04 / PAJIC AI LAB</div><h2>From opportunity<br/>to company.</h2><p>PAJIC AI Lab identifies high-potential AI opportunities and helps turn them into companies through pre-seed investment, technology strategy and venture building.</p><div className="tags"><span>AI</span><span>AGENTS</span><span>DATA</span><span>PAKISTAN</span></div></div></div></div></section>
       <section className="dark section"><div className="wrap reveal"><div className="split"><div><div className="eyebrow">05 / PAJIC TECHNOLOGY MAP</div><h2>The layers shaping the future.</h2></div><p>A focused view across the systems where PAJIC sees structural opportunity.</p></div><div className="map">{map.map(([n,t,d])=><div className="mapCard" key={n}><span>{n}</span><h3>{t}</h3><p>{d}</p></div>)}</div><div className="mosaic"><img src={images.datacenter} alt="Data centre"/><div className="mosaicSide"><img src={images.cybersecurity} alt="Cybersecurity technology"/><img src={images.engineering} alt="Advanced engineering"/></div></div></div></section>
