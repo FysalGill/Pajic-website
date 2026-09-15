@@ -1,0 +1,73 @@
+/* PAJIC global typography + icon scale aligned to the approved compact hero */
+:root{
+  --pajic-section-heading:clamp(31px,3vw,46px);
+  --pajic-section-body:14px;
+  --pajic-section-icon:15px;
+  --pajic-section-label:13px;
+}
+
+/* Section headings use the same compact visual language as the reduced hero */
+.split h2,.lab h2,.press h2,.contact h2,.featureCopy h2{
+  font-size:var(--pajic-section-heading);
+  line-height:.94;
+  letter-spacing:-2.7px;
+  font-weight:800;
+}
+
+/* Supporting copy matches the hero's reduced 14px body scale */
+.split p,.lab p,.contact p,.featureCopy>p:not(.quote),.article p,.portfolio p,.mapCard p,.thesisContent p{
+  font-size:var(--pajic-section-body);
+  line-height:1.55;
+}
+
+/* Section labels / eyebrow text follow the hero label scale */
+.eyebrow{font-size:var(--pajic-section-label);letter-spacing:3.1px;font-weight:600}
+
+/* Secondary headings and controls are proportionally stepped down from hero */
+.card h3,.mapCard h3,.thesisContent h3{font-size:19px;line-height:1.08;letter-spacing:-.35px}
+.card p{font-size:12px;line-height:1.45}
+.thesisContent>span{font-size:9px;letter-spacing:1.8px;margin-bottom:8px}
+.thesisContent h3{margin-bottom:8px}
+.thesisContent p{font-size:11px;line-height:1.4}
+
+/* All action / utility icons use the same compact 15px scale as the hero CTA icon */
+.card .plus,.thesisTile .plus,.portfolio article>svg,.pressCard>svg{
+  width:var(--pajic-section-icon);
+  height:var(--pajic-section-icon);
+}
+
+.quote{font-size:14px;line-height:1.5;padding-left:14px}
+.labBadge{font-size:9px;padding:7px 10px}
+.tags span{font-size:9px;padding:6px 10px}
+.portfolio h3{font-size:32px;line-height:.92;letter-spacing:-1.8px}
+.article h3{font-size:18px;line-height:1.15;letter-spacing:-.3px;margin:22px 0 8px}
+.articleBody{padding:18px}
+.article small{font-size:8px;letter-spacing:1.5px}
+.pressCard h3{font-size:clamp(20px,2.1vw,29px);line-height:1.05}
+.pressCard{padding:28px 0}
+
+@media(max-width:1100px){
+  .split h2,.lab h2,.press h2,.contact h2,.featureCopy h2{font-size:clamp(29px,3.6vw,40px)}
+  .split p,.lab p,.contact p,.featureCopy>p:not(.quote),.article p,.portfolio p,.mapCard p,.thesisContent p{font-size:12.6px}
+  .card h3,.mapCard h3{font-size:18px}
+  .portfolio h3{font-size:29px}
+  .article h3{font-size:17px}
+}
+
+@media(max-width:900px){
+  .split h2,.lab h2,.press h2,.contact h2,.featureCopy h2{font-size:34px;letter-spacing:-2px}
+  .split p,.lab p,.contact p,.featureCopy>p:not(.quote),.article p,.portfolio p,.mapCard p,.thesisContent p{font-size:12.6px}
+  .card h3,.mapCard h3{font-size:18px}
+  .portfolio h3{font-size:29px}
+  .article h3{font-size:17px}
+}
+
+@media(max-width:560px){
+  .split h2,.lab h2,.press h2,.contact h2,.featureCopy h2{font-size:30px;letter-spacing:-1.8px;max-width:100%}
+  .split p,.lab p,.contact p,.featureCopy>p:not(.quote),.article p,.portfolio p,.mapCard p,.thesisContent p{font-size:11.2px}
+  .card h3,.mapCard h3{font-size:17px}
+  .portfolio h3{font-size:26px}
+  .article h3{font-size:16px}
+  .pressCard h3{font-size:21px}
+  .portfolio article>svg,.pressCard>svg{width:15px;height:15px}
+}
