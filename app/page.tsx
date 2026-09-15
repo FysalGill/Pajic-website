@@ -14,7 +14,7 @@ const thesis = [
 
 const thesisImages = [
   '/images/technology.jpg',
-  '/images/software.jpg',
+  '/images/network.jpg',
   '/images/data.jpg',
   '/images/cybersecurity.jpg',
   '/images/satellite.jpg',
