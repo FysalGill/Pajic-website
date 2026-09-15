@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { ArrowUpRight, Menu, X, Plus, Cpu, Satellite, Server, Shield, ChartNoAxesCombined, Globe2 } from 'lucide-react'
+import { ArrowUpRight, Menu, X, Plus } from 'lucide-react'
 
 const thesis = [
   ['01','AI','Artificial Intelligence','AI platforms, agents, applied intelligence and intelligent software.'],
@@ -17,11 +17,6 @@ const map = [
   ['02','INFRASTRUCTURE','Compute · Data Centres · Cybersecurity'],
   ['03','CONNECTIVITY','Satellite · Telecom · Networks'],
   ['04','PHYSICAL SYSTEMS','Robotics · Energy · DeepTech']
-]
-
-const pillars = [
-  {name:'AI & DATA', Icon:Cpu}, {name:'SPACE & CONNECTIVITY', Icon:Satellite}, {name:'DIGITAL INFRASTRUCTURE', Icon:Server},
-  {name:'CYBERSECURITY', Icon:Shield}, {name:'VENTURE BUILDING', Icon:ChartNoAxesCombined}, {name:'EMERGING MARKETS', Icon:Globe2}
 ]
 
 const images = {
@@ -47,7 +42,7 @@ export default function Page() {
   return <>
     <header><div className="nav"><a className="brandLogo" href="#top"><img src="/pajic-logo.svg" alt="PAJIC Holding Ltd"/></a><nav className={open?'open':''}>{['about','thesis','lab','portfolio','intelligence','press','contact'].map(id=>nav(id))}</nav><a className="navcta" href="#contact">CONTACT US <ArrowUpRight size={16}/></a><button className="menub" aria-label="Open menu" onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button></div></header>
     <main id="top">
-      <section className="hero"><div className="heroGlow"/><div className="wrap heroIn reveal"><div className="eyebrow">TECHNOLOGY INVESTMENT · VENTURE BUILDING · EMERGING MARKETS</div><h1>We invest in<br/><em>what comes next.</em></h1><p>PAJIC is a technology investment and venture-building platform focused on AI, software, data, cybersecurity, space, connectivity and DeepTech.</p><div className="actions"><a className="gold" href="#thesis">OUR INVESTMENT THESIS <ArrowUpRight/></a><a className="ghost" href="#contact">WORK WITH PAJIC</a></div></div><a className="scrollCue" href="#about"><span>SCROLL</span><i>↓</i></a><div className="pillarStrip">{pillars.map(({name,Icon})=><a key={name} href="#thesis"><Icon className="pillarIcon"/><strong>{name}</strong></a>)}</div></section>
+      <section className="hero"><div className="heroGlow"/><div className="wrap heroIn reveal"><div className="eyebrow">TECHNOLOGY INVESTMENT · VENTURE BUILDING · EMERGING MARKETS</div><h1>We invest in<br/><em>what comes next.</em></h1><p>PAJIC is a technology investment and venture-building platform focused on AI, software, data, cybersecurity, space, connectivity and DeepTech.</p><div className="actions"><a className="gold" href="#thesis">OUR INVESTMENT THESIS <ArrowUpRight/></a><a className="ghost" href="#contact">WORK WITH PAJIC</a></div></div><a className="scrollCue" href="#about"><span>SCROLL</span><i>↓</i></a></section>
       <section id="about" className="wrap section reveal"><div className="split"><div><div className="eyebrow">01 / ABOUT PAJIC</div><h2>Technology is changing the map.</h2></div><p>We back technologies with the potential to reshape industries, create new markets and build durable advantage. Our perspective combines deep technology understanding with an emerging-market lens.</p></div><div className="imageStrip"><div><img className="wide" src={images.office} alt="Technology and capital"/><div className="imageCaption">Technology & Capital</div></div><div><img src={images.technology} alt="Technology"/><div className="imageCaption">Technology</div></div><div><img src={images.space} alt="Space technology"/><div className="imageCaption">Space & Connectivity</div></div></div></section>
       <section id="thesis" className="dark section"><div className="wrap reveal"><div className="split"><div><div className="eyebrow">02 / INVESTMENT THESIS</div><h2>Structural advantage.</h2></div><p>Our focus spans the technology stack — from intelligent software and data to the infrastructure that powers the digital economy.</p></div><div className="cards">{thesis.map(([n,k,t,d])=><article key={n} className="card"><span>{n} / {k}</span><h3>{t}</h3><p>{d}</p><Plus className="plus" size={18}/></article>)}</div></div></section>
       <section className="feature"><div className="featureImg"><img src={images.satellite} alt="Satellite and connectivity"/></div><div className="featureCopy reveal"><div className="eyebrow">03 / CONNECTIVITY</div><h2>From infrastructure beneath us to networks above us.</h2><p className="quote">The next technology cycle will be built across physical and digital infrastructure.</p><p>Satellite · Telecom · Infrastructure</p></div></section>
