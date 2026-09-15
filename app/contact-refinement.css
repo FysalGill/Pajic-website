@@ -1,0 +1,41 @@
+/* Contact section — bring scale, height and spacing into line with the rest of the PAJIC homepage. */
+.contact.section{
+  min-height:0;
+  padding:88px 0 76px;
+}
+.contact .eyebrow{margin-bottom:0}
+.contactGrid{
+  grid-template-columns:minmax(0,1.08fr) minmax(300px,.72fr);
+  gap:72px;
+  align-items:start;
+  margin-top:30px;
+}
+.contact h2{
+  font-size:clamp(42px,4.2vw,58px)!important;
+  line-height:.94!important;
+  letter-spacing:-2.8px!important;
+  margin:8px 0 22px!important;
+}
+.contactGrid>div:first-child p{
+  max-width:620px;
+  font-size:14px;
+  line-height:1.5;
+}
+.details{gap:18px}
+.details div{padding-top:13px}
+.details small{font-size:10px;letter-spacing:2px}
+.details p{font-size:15px;line-height:1.45;margin:6px 0}
+.contactVisual img{filter:saturate(.42) contrast(1.04) brightness(.62)}
+.contactShade{background:linear-gradient(90deg,rgba(8,8,8,.94),rgba(8,8,8,.82) 58%,rgba(8,8,8,.68))}
+@media(max-width:900px){
+  .contact.section{padding:72px 0 64px}
+  .contactGrid{grid-template-columns:1fr;gap:34px;margin-top:24px}
+  .contact h2{font-size:clamp(40px,8vw,54px)!important}
+}
+@media(max-width:560px){
+  .contact.section{padding:64px 0 56px}
+  .contactGrid{gap:24px}
+  .contact h2{font-size:38px!important;letter-spacing:-2px!important}
+  .details{gap:15px}
+  .details p{font-size:13px}
+}
