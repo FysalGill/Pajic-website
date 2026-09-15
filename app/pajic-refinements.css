@@ -4,20 +4,14 @@ html{scroll-padding-top:125px}
 body{background:var(--pajic-bg)}
 header{height:125px;background:rgba(3,3,3,.96);border-bottom:1px solid rgba(230,185,95,.20);backdrop-filter:blur(12px)}
 .nav{height:125px;width:min(1440px,94vw);gap:34px}
-.brandLogo img{width:380px;height:112px;object-fit:contain;display:block}
+.brandLogo img{width:342px;height:101px;object-fit:contain;display:block}
 nav{gap:35px}
 nav a{font-size:16px;font-weight:400;letter-spacing:0;color:#f0eee9;text-shadow:none}
 nav a:hover,nav a.active{color:var(--pajic-gold-light);text-shadow:0 0 16px rgba(230,185,95,.22)}
 .navcta{height:58px;padding:0 28px;display:flex;align-items:center;gap:10px;border:1px solid var(--pajic-gold);color:var(--pajic-gold-light);font-size:14px;font-weight:600;letter-spacing:1.25px;box-shadow:0 0 18px rgba(230,185,95,.05)}
 .menub{width:72px;height:72px;flex-basis:72px;color:var(--pajic-gold-light)}
 .menub svg{width:47px;height:47px;stroke-width:1.65}
-
-/* Hero composition follows the supplied reference: black space, Earth pushed right, warm golden network glow. */
-.hero{height:min(805px,100vh);min-height:700px;padding-top:125px;position:relative;display:flex;align-items:flex-start;overflow:hidden;background:
-  radial-gradient(ellipse 28% 38% at 76% 31%,rgba(230,185,95,.28),transparent 58%),
-  radial-gradient(ellipse 52% 55% at 79% 57%,rgba(180,120,35,.12),transparent 70%),
-  linear-gradient(90deg,rgba(3,3,3,.99) 0%,rgba(3,3,3,.94) 31%,rgba(3,3,3,.58) 52%,rgba(3,3,3,.08) 76%,rgba(3,3,3,.18) 100%),
-  url('/images/network.jpg') 58% 48%/cover no-repeat}
+.hero{height:min(805px,100vh);min-height:700px;padding-top:125px;position:relative;display:flex;align-items:flex-start;overflow:hidden;background:radial-gradient(ellipse 28% 38% at 76% 31%,rgba(230,185,95,.28),transparent 58%),radial-gradient(ellipse 52% 55% at 79% 57%,rgba(180,120,35,.12),transparent 70%),linear-gradient(90deg,rgba(3,3,3,.99) 0%,rgba(3,3,3,.94) 31%,rgba(3,3,3,.58) 52%,rgba(3,3,3,.08) 76%,rgba(3,3,3,.18) 100%),url('/images/network.jpg') 58% 48%/cover no-repeat}
 .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 76% 51%,transparent 30%,rgba(0,0,0,.25) 75%,rgba(0,0,0,.62) 100%);pointer-events:none}
 .hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:210px;background:linear-gradient(transparent,rgba(3,3,3,.94) 92%);pointer-events:none}
 .heroGlow{position:absolute;width:620px;height:620px;border:1px solid rgba(230,185,95,.10);border-radius:50%;right:-105px;top:115px;box-shadow:0 0 90px rgba(230,185,95,.05)}
@@ -35,16 +29,12 @@ nav a:hover,nav a.active{color:var(--pajic-gold-light);text-shadow:0 0 16px rgba
 .heroMeta{display:none}
 .scrollCue{position:absolute;right:4.2vw;bottom:30px;z-index:6;display:flex;flex-direction:column;align-items:center;gap:10px;color:#f3f1ec;letter-spacing:4px;font-size:12px;text-shadow:0 0 16px rgba(255,255,255,.15)}
 .scrollCue i{font-size:38px;color:var(--pajic-gold-light);font-style:normal;line-height:.8;text-shadow:0 0 18px rgba(230,185,95,.35)}
-
-/* Six pillars: icon-led, no numbered circles, matching the approved reference. */
 .pillarStrip{position:absolute;left:0;right:0;bottom:0;z-index:5;min-height:175px;display:grid;grid-template-columns:repeat(6,1fr);background:rgba(3,3,3,.96);border-top:1px solid rgba(230,185,95,.08)}
 .pillarStrip a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:17px;padding:20px 10px;border-right:1px solid #303030;text-align:center;transition:.25s}
 .pillarStrip a:last-child{border-right:0}
 .pillarStrip a:hover{background:#0e0d0a}
 .pillarIcon{width:54px;height:54px;color:var(--pajic-gold-light);stroke-width:1.5}
 .pillarStrip strong{font-size:12px;line-height:1.35;letter-spacing:2.2px;font-weight:500;color:#f2f0eb;max-width:180px}
-
-/* Lower sections retain V4.1 content while inheriting the same visual language. */
 .section{padding:125px 0}
 .eyebrow,.imageCaption,.article small,.tags span,.portfolio article>span,.pressCard span{color:var(--pajic-gold-light);text-shadow:0 0 14px rgba(230,185,95,.16)}
 .split h2,.lab h2,.press h2,.contact h2,.featureCopy h2{max-width:680px}
@@ -62,16 +52,7 @@ nav a:hover,nav a.active{color:var(--pajic-gold-light);text-shadow:0 0 16px rgba
 .contactVisual img{width:100%;height:100%;display:block}
 .portfolioImage img{filter:saturate(.72) contrast(1.08) brightness(.70)}
 .imageStrip img,.featureImg img,.labPhoto img,.mosaic img,.article img{border:1px solid rgba(230,185,95,.30)}
-
-@media(max-width:1500px){
-  .nav{gap:22px}.brandLogo img{width:335px}.navcta{padding:0 23px}nav{gap:27px}nav a{font-size:15px}.menub{width:64px;height:64px;flex-basis:64px}
-}
-@media(max-width:1100px){
-  header{height:96px}.nav{height:96px;width:min(94vw,1380px);gap:16px}.brandLogo img{width:275px;height:82px}nav{gap:17px}nav a{font-size:13px}.navcta{height:50px;padding:0 16px;font-size:11px}.menub{width:58px;height:58px;flex-basis:58px}.menub svg{width:38px;height:38px}.hero{height:min(760px,100vh);min-height:650px;padding-top:96px}.heroIn{padding-top:105px}.hero h1{font-size:clamp(60px,7.1vw,88px)}.pillarStrip{min-height:145px}.pillarIcon{width:48px;height:48px}.pillarStrip strong{font-size:10px}
-}
-@media(max-width:900px){
-  header{height:82px}.nav{height:82px}.brandLogo img{width:225px;height:68px}nav{gap:18px}.menub{width:58px;height:58px;flex-basis:58px}.imageStrip{grid-template-columns:repeat(2,1fr)}.imageStrip>div:first-child{grid-column:1/-1}.mosaic{grid-template-columns:1fr}.mosaicSide{grid-template-columns:repeat(2,1fr);grid-template-rows:1fr}.mosaicSide img{height:auto!important}.hero{height:auto;min-height:760px;padding-top:82px}.heroIn{padding-top:92px;padding-bottom:190px}.hero h1{font-size:64px;letter-spacing:-3px}.hero p{font-size:18px}.pillarStrip{min-height:160px}.pillarStrip strong{font-size:9px;letter-spacing:1.6px}.pillarIcon{width:44px;height:44px}.scrollCue{right:3vw;bottom:185px}
-}
-@media(max-width:560px){
-  .nav{height:78px}.brandLogo img{width:185px;height:62px}.section{padding:90px 0}.imageStrip,.mosaicSide{grid-template-columns:1fr}.imageStrip>div:first-child{grid-column:auto}.mosaicSide{grid-template-rows:auto}.mosaicSide img{height:auto!important}.hero{min-height:760px;padding-top:78px}.heroIn{padding-top:72px;padding-bottom:185px}.hero .eyebrow{font-size:9px;letter-spacing:2px}.hero h1{font-size:52px;line-height:.91;letter-spacing:-2.5px;margin:22px 0}.hero p{font-size:16px}.actions{margin-top:25px;gap:10px}.gold,.ghost{height:56px;min-width:0;padding:0 15px;font-size:10px}.pillarStrip{position:absolute;grid-template-columns:repeat(2,1fr);min-height:0}.pillarStrip a{min-height:105px;gap:8px}.pillarIcon{width:36px;height:36px}.pillarStrip strong{font-size:8px;letter-spacing:1.2px}.scrollCue{display:none}.split h2,.lab h2,.press h2,.contact h2,.featureCopy h2{letter-spacing:-2px;max-width:100%}
-}
+@media(max-width:1500px){.nav{gap:22px}.brandLogo img{width:302px;height:90px}.navcta{padding:0 23px}nav{gap:27px}nav a{font-size:15px}.menub{width:64px;height:64px;flex-basis:64px}}
+@media(max-width:1100px){header{height:96px}.nav{height:96px;width:min(94vw,1380px);gap:16px}.brandLogo img{width:248px;height:82px}nav{gap:17px}nav a{font-size:13px}.navcta{height:50px;padding:0 16px;font-size:11px}.menub{width:58px;height:58px;flex-basis:58px}.menub svg{width:38px;height:38px}.hero{height:min(760px,100vh);min-height:650px;padding-top:96px}.heroIn{padding-top:105px}.hero h1{font-size:clamp(60px,7.1vw,88px)}.pillarStrip{min-height:145px}.pillarIcon{width:48px;height:48px}.pillarStrip strong{font-size:10px}}
+@media(max-width:900px){header{height:82px}.nav{height:82px}.brandLogo img{width:203px;height:68px}nav{gap:18px}.menub{width:58px;height:58px;flex-basis:58px}.imageStrip{grid-template-columns:repeat(2,1fr)}.imageStrip>div:first-child{grid-column:1/-1}.mosaic{grid-template-columns:1fr}.mosaicSide{grid-template-columns:repeat(2,1fr);grid-template-rows:1fr}.mosaicSide img{height:auto!important}.hero{height:auto;min-height:760px;padding-top:82px}.heroIn{padding-top:92px;padding-bottom:190px}.hero h1{font-size:64px;letter-spacing:-3px}.hero p{font-size:18px}.pillarStrip{min-height:160px}.pillarStrip strong{font-size:9px;letter-spacing:1.6px}.pillarIcon{width:44px;height:44px}.scrollCue{right:3vw;bottom:185px}}
+@media(max-width:560px){.nav{height:78px}.brandLogo img{width:167px;height:62px}.section{padding:90px 0}.imageStrip,.mosaicSide{grid-template-columns:1fr}.imageStrip>div:first-child{grid-column:auto}.mosaicSide{grid-template-rows:auto}.mosaicSide img{height:auto!important}.hero{min-height:760px;padding-top:78px}.heroIn{padding-top:72px;padding-bottom:185px}.hero .eyebrow{font-size:9px;letter-spacing:2px}.hero h1{font-size:52px;line-height:.91;letter-spacing:-2.5px;margin:22px 0}.hero p{font-size:16px}.actions{margin-top:25px;gap:10px}.gold,.ghost{height:56px;min-width:0;padding:0 15px;font-size:10px}.pillarStrip{position:absolute;grid-template-columns:repeat(2,1fr);min-height:0}.pillarStrip a{min-height:105px;gap:8px}.pillarIcon{width:36px;height:36px}.pillarStrip strong{font-size:8px;letter-spacing:1.2px}.scrollCue{display:none}.split h2,.lab h2,.press h2,.contact h2,.featureCopy h2{letter-spacing:-2px;max-width:100%}}
